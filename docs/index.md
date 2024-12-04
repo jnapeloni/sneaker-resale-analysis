@@ -18,10 +18,10 @@ The objectives of this project are to:
 4. Analyze sneaker resale trends to cluster similar shoes together
 
 ## Table of Contents
-[Data Description](data.md) 
-[Methodology](methodology.md)
-[Results](results.md)
-[Conslusion](conclusion.md)
-[Code](code.md)
+[Data Description](data.md)  
+[Methodology](methodology.md)  
+[Results](results.md)  
+[Conslusion](conclusion.md)  
+[Code](code.md)  
 
 
