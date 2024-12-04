@@ -30,7 +30,7 @@ I conducted exploratory data analysis univariately to view distributions of both
 
 ## Statistical Modeling 
 
-I applied multiple statistical models to identify the most important factors influencing sneaker resale prices, as well as to analyze trends and associations between similar sneakers on the resale market. 
+Multiple statistical models were applied to identify the most important factors influencing sneaker resale prices, as well as to analyze trends and associations between similar sneakers on the resale market. 
 
 ### a. Principal Component Analysis 
 
