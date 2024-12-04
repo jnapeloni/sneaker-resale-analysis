@@ -24,4 +24,13 @@ The objectives of this project are to:
 [Conslusion](conclusion.md)  
 [Code](https://github.com/jnapeloni/sneaker-resale-analysis/tree/main/code)  
 
+## Key Findings 
+
+## Future Work 
+
+## Author 
+Jack Napeloni, Williams College '25, Economics and Statistics  
+
+## References 
+
 
