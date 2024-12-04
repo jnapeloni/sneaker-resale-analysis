@@ -28,6 +28,14 @@ I conducted exploratory data analysis univariately to view distributions of both
     - Barplots were created to observe the frequency of categorical variables in the data.
       <img src="images/Barplots.png" alt="drawing" width="600"/>
 
+## Statistical Modeling 
+
+I applied multiple statistical models to identify the most important factors influencing sneaker resale prices, as well as to analyze trends and associations between similar sneakers on the resale market. 
+
+### a. Principal Component Analysis 
+
+
+
 
 
       
