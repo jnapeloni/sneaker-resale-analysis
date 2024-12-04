@@ -34,6 +34,15 @@ I applied multiple statistical models to identify the most important factors inf
 
 ### a. Principal Component Analysis 
 
+  - **Goal**: The goal of PCA is to reduce the dimensionality of the data to observe the variables that best explain trends and patterns within the data.
+  - **Implementation**:
+    - PCA was implemented on the subset of data containing only the quantitative variables in the data, `sneakers.quant`.
+    - The `collab` variable was treated as numeric, which is further explained in the Data Preprocessing section of this project.
+    - The data was standardized in implementing PCA to ensure the variables were measured on an equal scale.
+  - **Results**:
+      - A screeplot and cumulative proportion of variance plot were created to determine an appropriate number of principal components. Based on these plots, utilizing 2 principal components appeared significant in explaining approximately 80% of the variance in the data.
+        **insert screeplot** 
+
 
 
 
