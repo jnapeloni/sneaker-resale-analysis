@@ -5,7 +5,7 @@ url: "https://jnapeloni.github.io/sneaker-resale-analysis/"
 author: Jack Napeloni 
 
 # Theme Settings 
-theme: slate
+theme: minima
 
 header_pages: 
   - data.md  
