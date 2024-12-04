@@ -41,7 +41,7 @@ This dataset contains the following variables:
      ```r
      sneakers <- read.csv("/data/sneakers2023.csv", sep = ",", header = T)
      ```
-  2. **Remove First Column**: The first column of the data was removed, as it contained observation numbers which were unnecessary. A new dataframe, named `sneakers.clean` was created in this process through the following code:
+  2. **Remove First Column**: The first column of the data was removed, as it contained observation numbers which were unnecessary. A new dataframe, named `sneakers.clean`, was created in this process through the following code:
      ```r
      sneakers.clean <- sneakers[,-1]
      ```
