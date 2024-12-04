@@ -36,6 +36,11 @@ This dataset contains the following variables:
 | `jordan.type`          | Type of Jordan sneaker (N/A if not a Jordan sneaker)                                                         |
 | `collab`               | Collaboration with other brand (0 = No, 1 = Yes)                                                             |
 
-## Data Processing and Cleaning 
+## Data Processing and Cleaning Steps 
+  1. **Loading the Data**: The dataset was loaded into RMarkdown using:
+     ```r
+     sneakers <- read.csv("/data/sneakers2023.csv", sep = ",", header = T)
+     ```
+     
 
 
