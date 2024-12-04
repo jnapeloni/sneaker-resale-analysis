@@ -57,7 +57,7 @@ This dataset contains the following variables:
       sneakers.clean$jordan.type[jordan_rows] <- sub(".*(Jordan \\d+).*", "\\1",sneakers.clean$item[jordan_rows])
       sneakers.clean$jordan.type[1] <- "Jordan 4"
       ```
-  6. **Adding Collaboration Variable**: The `collab` variable was created and added to the dataset to indicate whether a sneaker was apart of a collaboration between two sneaker brands, or between a sneaker brand and non-traditional sneaker brand. Values of 0 indicate _no collaboration_ and 1 indicates _apart of a collaboration_
+  6. **Adding Collaboration Variable**: The `collab` variable was created and added to the dataset to indicate whether a sneaker was apart of a collaboration between two sneaker brands, or between a sneaker brand and non-traditional sneaker brand. Values of 0 indicate _no collaboration_ and 1 indicates _apart of a collaboration_. This variable was implemented as a categorical variable. 
   7. **Handling Incorrect or Missing Values**:
      - Observation 1334 (Jordan 1 Low SE True Blue) had an incorrect retail price, which was adjusted from 1100 to 110, which is the correct value
      - Observations with missing or 0 values were removed from the data, as these were not accurate.
