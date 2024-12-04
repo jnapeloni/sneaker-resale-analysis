@@ -16,7 +16,7 @@ The dataset used in this analysis is the **StockX Sneaker Data** which contains 
 This dataset contains the following variables: 
 
 | Variable Name          | Description                                                                                                  | 
-|------------------------|--------------------------------------------------------------------------------------------------------------|--
+|------------------------|----------------------------------------------------------------------------------------------------------------|
 | 'item'                 | Sneaker name                                                                                                 |
 | 'brand'                | Sneaker brand                                                                                                | 
 | 'retail'               | Retail price                                                                                                 |
