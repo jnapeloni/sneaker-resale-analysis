@@ -50,7 +50,7 @@ This dataset contains the following variables:
   - The brand variable 'nike' was replaced with 'Nike SB' for Nike sneakers that are apart of the Nike SB line
   - The brand variable 'nike' was replaced with 'Nike Dunk' for Nike sneakers that are of the Nike Dunk model
   - The brand variable 'nike' was replaced with 'Nike AF1' for Nike sneakers that are of the Nike Air Force 1 model
-  5. **Adding Jordan Variable**: The `jordan.type` variable was created and added to the dataset to specify the type of Jordan sneaker. Non-Jordan sneakers were filled with N/A values. One obserbation (obs #1) was manually adjusted to 'Jordan 4'. This was implemented through the following:
+  5. **Adding Jordan Variable**: The `jordan.type` variable was created and added to the dataset to specify the type of Jordan sneaker. Non-Jordan sneakers were filled with N/A values. One obserbation (obs #1) was manually adjusted to 'Jordan 4'. This was implemented through the following:  
     ```r
     sneakers.clean$jordan.type <- NA
     jordan_rows <- sneakers.clean$brand == "Jordan"
