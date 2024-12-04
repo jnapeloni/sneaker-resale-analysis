@@ -22,6 +22,6 @@ The objectives of this project are to:
 [Methodology](methodology.md)  
 [Results](results.md)  
 [Conslusion](conclusion.md)  
-[Code](code.md)  
+[Code](https://github.com/jnapeloni/sneaker-resale-analysis/tree/main/code)  
 
 
