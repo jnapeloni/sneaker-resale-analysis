@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Data Description"
+title: "Methodology"
 ---
 
 # Methodology 
