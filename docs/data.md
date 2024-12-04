@@ -27,7 +27,7 @@ This dataset contains the following variables:
 | `highestBid`           | Highest bid by buyer                                                                                         |
 | `numberOfBids`         | Number of bids                                                                                               |
 | `annualHigh`           | Highest sale price reached on annual basis                                                                   |
-| `annualLow`            | Lowest sale price reached on an annual                                                                       |
+| `annualLow`            | Lowest sale price reached on annual basis                                                                    |
 | `volatility`           | Volatility in sale price (measured in percentage, 12-month period)                                           |
 | `deadstockSold`        | Number of total deadstock pairs sold                                                                         |
 | `pricePremium`         | Measure of average sale price above retail price (measured in percentage)                                    |
