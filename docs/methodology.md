@@ -20,11 +20,13 @@ Before any statistical analysis, the following steps were taken to prepare the d
 
 ## Exploratory Data Analysis (EDA) 
 
-I conducted exploratory data analysis both univariately and bivariately to view distributions and associations between variables in the data. 
+I conducted exploratory data analysis univariately to view distributions of both quantitative and categorical variables in the data. 
 
   - **Univariate Analysis**
     - Histograms were created to observe the distributions of six quantitative variables in the data.
       <img src="images/Histograms.png" alt="drawing" width="600"/>
+    - Barplots were created to observe the frequency of categorical variables in the data.
+      <img src="images/Barplots.png" alt="drawing" width="600"/>
 
 
 
