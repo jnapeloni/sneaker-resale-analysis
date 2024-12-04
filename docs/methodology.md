@@ -25,7 +25,7 @@ I conducted exploratory data analysis both univariately and bivariately to view 
   - **Univariate Analysis**
     - Histograms were created to observe the distributions of six quantitative variables in the data.
       ![Histograms]("/images/Histograms.png")
-      <img src="/images/Histograms.png" alt="drawing" width="600"/>
+      <img src="images/Histograms.png" alt="drawing" width="600"/>
 
 
 
