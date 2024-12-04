@@ -61,7 +61,7 @@ This dataset contains the following variables:
   7. **Handling Incorrect or Missing Values**:
      - Observation 1334 (Jordan 1 Low SE True Blue) had an incorrect retail price, which was adjusted from 1100 to 110, which is the correct value
      - Observations with missing or 0 values were removed from the data, as these were not accurate.
-  8. **Formalize `ASICS` Brand Name**: The brand 'ASICS' was not spelled consistently within the data. All ASICS brand sneakers were made to be spelled consistently as 'ASICS' within the `brand` variable.
+  8. **Formalize 'ASICS' Brand Name**: The brand 'ASICS' was not spelled consistently within the data. All ASICS brand sneakers were made to be spelled consistently as 'ASICS' within the `brand` variable.
   9. **Simplifying Variable Name**: The original dataset contained an `averageDeadstockPrice` variable, which was shortened to `AvgDSPrice` for simplicity 
      
 
