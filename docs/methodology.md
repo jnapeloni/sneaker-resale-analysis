@@ -17,3 +17,11 @@ Before any statistical analysis, the following steps were taken to prepare the d
   - A subset of the original dataset was created which only included 'Nike' brand shoes. This was done in preparation for exploratory data analysis and was named `sneakers.nikes`
   - A subset of the original dataset was created which only included the most frequently occurring brands in the dataset. These are 'Nike', 'Nike SB', 'Nike Dunk', 'Nike AF1', 'Jordan', 'adidas', 'Yeezy', and 'New Balance'. This was done in preparation for exploratory data analysis and was named `sneakers.brands`
   - A subset of the original dataset was created which only included quantitative variables. These are `retail`, `lowestAsk`, `numberOfAsks`, `salesThisPeriod`, `highestBid`, `numberOfBids`, `annualHigh`, `annualLow`, `volatility`, `deadstockSold`, `pricePremium`, `AvgDSPrice`, `lastSale`, `collab`. This was done in preparation for principal component analysis and was named `sneakers.quant`  
+
+## Exploratory Data Analysis (EDA) 
+
+I conducted exploratory data analysis both univariately and bivariately to view distributions and associations between variables in the data. 
+
+  - **Univariate Analysis**
+    - Histograms were created to observe the distributions of six quantitative variables in the data.
+      ![Histograms]("/Users/jacknapeloni/desktop/Multivariate/FinalProject/Images/Histograms.png")
