@@ -1,3 +1,3 @@
 The project webpage can be found at the following URL  
 
-(insert link here) 
+(https://jnapeloni.github.io/sneaker-resale-analysis/) 
