@@ -45,7 +45,7 @@ This dataset contains the following variables:
      ```r
      sneakers.clean <- sneakers[,-1]
      ```
-  3. **Brand Variable Specification**: The 'brand' variable was replaced for sneakers with more specific brand types for the following:
+  3. **Brand Variable Specification**: The 'brand' variable was replaced for sneakers with more specific brand names for the following:
     - The brand variable 'adidas' was replaced with 'Yeezy' for Adidas sneakers that are of the Yeezy model 
     - The brand variable 'nike' was replaced with 'Nike SB' for Nike sneakers that are apart of the Nike SB line
     - The brand variable 'nike' was replaced with 'Nike Dunk' for Nike sneakers that are of the Nike Dunk model
