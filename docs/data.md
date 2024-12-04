@@ -50,13 +50,13 @@ This dataset contains the following variables:
   - The brand variable 'nike' was replaced with 'Nike SB' for Nike sneakers that are apart of the Nike SB line
   - The brand variable 'nike' was replaced with 'Nike Dunk' for Nike sneakers that are of the Nike Dunk model
   - The brand variable 'nike' was replaced with 'Nike AF1' for Nike sneakers that are of the Nike Air Force 1 model
-  5. **Adding Jordan Variable**: The `jordan.type` variable was created and added to the dataset to specify the type of Jordan sneaker. Non-Jordan sneakers were filled with N/A values. One obserbation (obs #1) was manually adjusted to 'Jordan 4'. This was implemented through the following:  
-    ```r
-    sneakers.clean$jordan.type <- NA
-    jordan_rows <- sneakers.clean$brand == "Jordan"
-    sneakers.clean$jordan.type[jordan_rows] <- sub(".*(Jordan \\d+).*", "\\1",sneakers.clean$item[jordan_rows])
-    sneakers.clean$jordan.type[1] <- "Jordan 4"
-    ```
+  5. **Adding Jordan Variable**: The `jordan.type` variable was created and added to the dataset to specify the type of Jordan sneaker. Non-Jordan sneakers were filled with N/A values. One obserbation (obs #1) was manually adjusted to 'Jordan 4'. This was implemented through the following:
+      ```r
+      sneakers.clean$jordan.type <- NA
+      jordan_rows <- sneakers.clean$brand == "Jordan"
+      sneakers.clean$jordan.type[jordan_rows] <- sub(".*(Jordan \\d+).*", "\\1",sneakers.clean$item[jordan_rows])
+      sneakers.clean$jordan.type[1] <- "Jordan 4"
+      ```
   6. **Adding Collaboration Variable**: The `collab` variable was created and added to the dataset to indicate whether a sneaker was apart of a collaboration between two sneaker brands, or between a sneaker brand and non-traditional sneaker brand. Values of 0 indicate _no collaboration_ and 1 indicates _apart of a collaboration_
   7. **Handling Incorrect or Missing Values**:
      - Observation 1334 (Jordan 1 Low SE True Blue) had an incorrect retail price, which was adjusted from 1100 to 110, which is the correct value
