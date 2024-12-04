@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Homepage"
-permalink: /
 ---
 
 # Sneaker Resale Analysis 
