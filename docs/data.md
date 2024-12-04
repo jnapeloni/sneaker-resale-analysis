@@ -33,7 +33,7 @@ This dataset contains the following variables:
 | `pricePremium`         | Measure of average sale price above retail price (measured in percentage)                                    |
 | `AvgDSPrice`           | Average sale price for unused and unworn sneakers                                                            |
 | `lastSale`             | Most recent sale price                                                                                       |
-| `Jordan.type`          | Type of Jordan sneaker (N/A if not a Jordan sneaker)                                                         |
+| `jordan.type`          | Type of Jordan sneaker (N/A if not a Jordan sneaker)                                                         |
 | `collab`               | Collaboration with other brand (0 = No, 1 = Yes)                                                             |
 
 ## Data Processing and Cleaning 
