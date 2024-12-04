@@ -1,6 +1,6 @@
 ---
-layout: default  
-title: `Data Description` 
+layout: default
+title: "Data Description"
 ---
 
 # Methodology 
