@@ -46,13 +46,10 @@ Multiple statistical models were applied to identify the most important factors 
           <img src="images/Screeplot_PCA.png" width="400" />
           <img src="images/CumulativePropVar.png" width="400" />
         </p>
-      - Barplots containing the loadings for the first two principal components were created in order to determine which variables contribute most to each component. Based on the barplots and loadings, Average DeadStock Price, Last Sale Price, and Lowest Ask Price are loaded high for the first component. The collaboration and retail price variables are loaded high for the second principal components. 
-        <p float="left">
-          <img src="images/.png" width="400" />
-          <img src="images/png" width="400" />
-        </p>
-
-
-
+      - Barplots containing the loadings for the first two principal components were created in order to determine which variables contribute most to each component. Based on the barplots and loadings, Average DeadStock Price, Last Sale Price, and Lowest Ask Price are loaded high for the first component. The collaboration and retail price variables are loaded high for the second principal components.
+ 
+        <img src="images/BarPlots_PCA.png" alt="drawing" width="600"/>
+      - A biplot plotting the data points with the first two principal components on the axes was created to visualize the loadings and significance of the variables' contributions to each principal component. The plot shows that `AvgDSPrice`, `lastSale`, and `lowestAsk` are loaded high for the first principal component, along with `collab` and `retail` loaded high for the second principal component.
+        
 
       
