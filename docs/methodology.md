@@ -73,5 +73,11 @@ Multiple statistical models were applied to identify the most important factors 
 
    - **Goal**: The goal of hierarchical clustering is the cluster the data based on a predetermined linkage function, which specifies the function used to cluster the data. Hierarchical clustering was implemented as an additional form of analysis to further understand the underlying variables 
    - **Implementation**:
-       - Hierarchical clustering 
+       - Hierarchical clustering was implemented using a subset of the data which only contained quantitative variables, `sneakers.quant`
+       - The new dataset was scaled to ensure that the data was standardized before use
+       - A distance matrix was created from the scaled data using euclidean distance
+       - The minimax linkage function in the 'protoclust' R package was applied to the distance matrix for hierarchical clustering analysis
+    
+   - **Results**:
+       - 
       
