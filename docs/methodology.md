@@ -69,5 +69,9 @@ Multiple statistical models were applied to identify the most important factors 
 
          <img src="images/KMeans_Cluster.png" alt="drawing" width="400"/>
 
+### c. Hierarchical Clustering 
 
+   - **Goal**: The goal of hierarchical clustering is the cluster the data based on a predetermined linkage function, which specifies the function used to cluster the data. Hierarchical clustering was implemented as an additional form of analysis to further understand the underlying variables 
+   - **Implementation**:
+       - Hierarchical clustering 
       
