@@ -49,7 +49,20 @@ Multiple statistical models were applied to identify the most important factors 
       - Barplots containing the loadings for the first two principal components were created in order to determine which variables contribute most to each component. Based on the barplots and loadings, Average DeadStock Price, Last Sale Price, and Lowest Ask Price are loaded high for the first component. The collaboration and retail price variables are loaded high for the second principal components.
  
         <img src="images/BarPlots_PCA.png" alt="drawing" width="600"/>
-      - A biplot plotting the data points with the first two principal components on the axes was created to visualize the loadings and significance of the variables' contributions to each principal component. The plot shows that `AvgDSPrice`, `lastSale`, and `lowestAsk` are loaded high for the first principal component, along with `collab` and `retail` loaded high for the second principal component.
         
+      - A biplot plotting the data points with the first two principal components on the axes was created to visualize the loadings and significance of the variables' contributions to each principal component. The plot shows that `AvgDSPrice`, `lastSale`, and `lowestAsk` are loaded high for the first principal component, along with `collab` and `retail` loaded high for the second principal component.
+   
+        <img src="images/Biplot.png" alt="drawing" width="600"/>
+
+### b. K-Means Clustering 
+
+  - **Goal**: The goal of k-means clustering is to partition the data based on the variables using a step-wise approach into non-overlapping groups.
+  - **Implementation**:
+     - K-means clustering analysis was implemented on a subset of the data containing only quantitative variables, `sneakers.quant`
+     - A plot using the CH-Index to measure between-cluster variation was created to determine the optimal number of clusters
+  - **Results**:
+     - The between-cluster variation plot utilizes the CH-Index to determine the optimal number of centers (or clusters) to use when implementing k-means clustering. Based on this plot, the CH-Index reaches its largest value when utilizing 4 clusters. Thus, I chose to use 4 centers in k-means cluster analysis.
+         <img src="images/Biplot.png" alt="drawing" width="600"/>
+
 
       
