@@ -77,7 +77,6 @@ Multiple statistical models were applied to identify the most important factors 
        - The new dataset was scaled to ensure that the data was standardized before use
        - A distance matrix was created from the scaled data using euclidean distance
        - The minimax linkage function in the 'protoclust' R package was applied to the distance matrix for hierarchical clustering analysis
-    
-   - **Results**:
+    - **Results**:
        - 
       
