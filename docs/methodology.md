@@ -62,7 +62,11 @@ Multiple statistical models were applied to identify the most important factors 
      - A plot using the CH-Index to measure between-cluster variation was created to determine the optimal number of clusters
   - **Results**:
      - The between-cluster variation plot utilizes the CH-Index to determine the optimal number of centers (or clusters) to use when implementing k-means clustering. Based on this plot, the CH-Index reaches its largest value when utilizing 4 clusters. Thus, I chose to use 4 centers in k-means cluster analysis.
-         <img src="images/Biplot.png" alt="drawing" width="600"/>
+       
+         <img src="images/CHindex.png" alt="drawing" width="400"/>
+         
+     - K-means clustering utilizing 4 centers was applied to the dataset and plotted with the first two principal components on the axes. Based on the plot, it appears that the first principal component was most influential in determining cluster assignment for this data. The plot does have some overlapping clusters, but this is minimal in comparison to utilizing a different number of centers or clusters. Thus, utilizing 4 clusters seems reasonable in clustering this data. 
+
 
 
       
