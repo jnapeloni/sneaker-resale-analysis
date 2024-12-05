@@ -40,8 +40,8 @@ Multiple statistical models were applied to identify the most important factors 
     - The `collab` variable was treated as numeric, which is further explained in the Data Preprocessing section of this project.
     - The data was standardized in implementing PCA to ensure the variables were measured on an equal scale.
   - **Results**:
-      - A screeplot and cumulative proportion of variance plot were created to determine an appropriate number of principal components. Based on these plots, utilizing 2 principal components appeared significant in explaining approximately 80% of the variance in the data.
-        **insert screeplot** 
+      - A screeplot and cumulative proportion of variance plot were created to determine an appropriate number of principal components. Based on these plots, utilizing 2 principal components appeared significant in explaining approximately 80% of the variance in the data.  
+        <img src="images/Screeplot_PCA.png" alt="drawing" width="600"/>
 
 
 
