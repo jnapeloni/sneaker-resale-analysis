@@ -67,6 +67,7 @@ Multiple statistical models were applied to identify the most important factors 
          
      - K-means clustering utilizing 4 centers was applied to the dataset and plotted with the first two principal components on the axes. Based on the plot, it appears that the first principal component was most influential in determining cluster assignment for this data. The plot does have some overlapping clusters, but this is minimal in comparison to utilizing a different number of centers or clusters. Thus, utilizing 4 clusters seems reasonable in clustering this data. 
 
+         <img src="images/KMeans_Cluster.png" alt="drawing" width="400"/>
 
 
       
