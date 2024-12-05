@@ -81,4 +81,7 @@ Multiple statistical models were applied to identify the most important factors 
        - The minimax linkage function was chosen out of a potential five linkage functions (single, complete, centroid, and average) because it produced the most effective clustering of the data. The data was grouped into 4 clusters based on the minimax linkage function and was then plotted with the first two principal components on the axes. The datapoints were replaced with a number representing each observation's cluster assignment (cluster 1, 2, 3, or 4) and each cluster was plotted in a different color to easily identify the different clusters. The plot suggests that the first principal component is important in explaining and clustering the data, as it creates four distinct clusters which are separate from one another.
 
          <img src="images/Minimax.png" alt="drawing" width="400"/>
+
+
+Further results, analysis, and interpretations can be found in the [Results](results.md) section
       
