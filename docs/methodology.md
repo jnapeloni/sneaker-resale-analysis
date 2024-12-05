@@ -39,10 +39,18 @@ Multiple statistical models were applied to identify the most important factors 
     - PCA was implemented on the subset of data containing only the quantitative variables in the data, `sneakers.quant`.
     - The `collab` variable was treated as numeric, which is further explained in the Data Preprocessing section of this project.
     - The data was standardized in implementing PCA to ensure the variables were measured on an equal scale.
+    - Principal Component Regression was performed using the first two principal components, in which `AvgDSPrice` was chosen as the dependent variable. 
   - **Results**:
-      - A screeplot and cumulative proportion of variance plot were created to determine an appropriate number of principal components. Based on these plots, utilizing 2 principal components appeared significant in explaining approximately 80% of the variance in the data.  
-        <img src="images/Screeplot_PCA.png" alt="drawing" width="600"/>
-
+      - A screeplot and cumulative proportion of variance plot were created to determine an appropriate number of principal components. Based on these plots, The first two principal components explain approximately 80% of the variance in the data. Thus, I chose to utilize 2 principal components in this analysis.
+        <p float="left">
+          <img src="images/Screeplot_PCA.png" width="400" />
+          <img src="images/CumulativePropVar.png" width="400" />
+        </p>
+      - Barplots containing the loadings for the first two principal components were created in order to determine which variables contribute most to each component. Based on the barplots and loadings, Average DeadStock Price, Last Sale Price, and Lowest Ask Price are loaded high for the first component. The collaboration and retail price variables are loaded high for the second principal components. 
+        <p float="left">
+          <img src="images/.png" width="400" />
+          <img src="images/png" width="400" />
+        </p>
 
 
 
