@@ -44,6 +44,10 @@ In the correlation matrix, a stronger shade of blue represents a stronger, posit
 
 ## 2. Principal Component Regression 
 
+Using the results obtained by applying Principal Component Analysis on the quantitative variables in the data, Principal Component Regression was implemented to determine and quantify the effects of each principal component on a dependent variable, being the `AvgDSPrice` variable. 
+
+   <img 
+
 
 
    
