@@ -1,1 +1,7 @@
-Insert Conclusion here 
+---
+layout: default
+title: Conclusions 
+--- 
+
+# Conclusions 
+
