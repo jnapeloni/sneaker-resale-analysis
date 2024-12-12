@@ -5,8 +5,12 @@ title: Results
 
 # Results 
 
+## 1. Exploratory Data Analysis 
 
-## 1. Principal Component Analysis Results 
+A more specific exploratory data analysis was conducted in addition to the simple EDA described in the methodology section. This additional EDA aims to analyze the association of both the `jordan type` and `collab` variables with increased prices on the resale market. 
+
+
+## 2. Principal Component Analysis Results 
 
 Principal Component Analysis was used to reduce the dimensionality of the data to analyze key variables that explain trends and patterns within the data. 
 
@@ -42,7 +46,7 @@ Based on the potential associations between the variables shown in the biplot, a
 
 In the correlation matrix, a stronger shade of blue represents a stronger, positive, correlation between variables, and lighter shades represent weaker (but still positive) correlations. The lightest shades of blue (almost white) represent a correlation of 0 between variables, or no association. Analyzing the potential relationships between variables, as indicated in the biplot, reveals a strong correlation between the `annualHigh` variable and both the `highestBid` and `AvgDSPrice` variables. Furthermore, there is a strong correlation between the `annualLow` variable and both the `lowestAsk` and `AvgDSPrice` variables. `lastSale` is highly correlated with the `lowestAsk` and `AvgDSPrice` variables. All of these correlations, with some stronger than others, are positive associations. Lastly, the correlation matrix reveals that the `collab` and `retail` variables have a correlation coefficient equal to zero, or that there is no correlation between these variables. 
 
-## 2. Principal Component Regression 
+## 3. Principal Component Regression 
 
 Using the results obtained by applying Principal Component Analysis on the quantitative variables in the data, Principal Component Regression was implemented to determine and quantify the effects of each principal component on a dependent variable, being the `AvgDSPrice` variable. The results obtained from this regression can be seen in the table below. 
 
@@ -50,7 +54,7 @@ Using the results obtained by applying Principal Component Analysis on the quant
 
 The intercept term is 200.948 dollars, which is the price we expect if both PC1 and PC2 are zero, and is statistically significant at the 5% level. Principal Component 1 has a coefficient of -59.369 dollars, which is the average change in expected price for a one unit increase in the first principal component. This result is statistically significant at the 5% level. Principal Component 2 has a coefficient of 4.426 dollars, which is the average change in expected price associated with a one unit increase in the second Principal Component, and is also statistically significant at the 5% level. Based on these results, we can reasonably conclude that sneakers with higher retail prices and those that are apart of a collaboration are associated with higher prices on the resale market. 
 
-## 3. Clustering Analysis 
+## 4. Clustering Analysis 
 
 Clustering analysis was implemented in two ways on this data. The first, being k-means clustering, utilizes a step-wise approach to partition the data into groups. The second, being hierarchical clustering, groups the observed data into clustering based on a predetermined linkage function. 
 
