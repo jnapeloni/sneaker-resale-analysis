@@ -7,7 +7,11 @@ title: Results
 
 ## 1. Exploratory Data Analysis 
 
-A more specific exploratory data analysis was conducted in addition to the simple EDA described in the methodology section. This additional EDA aims to analyze the association of both the `jordan type` and `collab` variables with increased prices on the resale market. 
+A more specific exploratory data analysis was conducted in addition to the simple EDA described in the methodology section. This additional EDA aims to analyze the association of the `brand`, `jordan type` and `collab` variables with increased prices on the resale market. 
+
+<img src="images/Box_Brand.png" alt="drawing" width="600"/> 
+
+The boxplot displays the distribution of average deadstock price for each frequently occurring brand in the dataset. This plot suggests that Yeezy, Jordan, and Nike SB sneakers are most highly associated with increased prices on the resale market. 
 
 <img src="images/Box_Jordan.png" alt="drawing" width="600"/> 
 
