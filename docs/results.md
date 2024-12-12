@@ -9,6 +9,14 @@ title: Results
 
 A more specific exploratory data analysis was conducted in addition to the simple EDA described in the methodology section. This additional EDA aims to analyze the association of both the `jordan type` and `collab` variables with increased prices on the resale market. 
 
+<img src="images/Box_Jordan.png" alt="drawing" width="600"/> 
+
+The boxplot displays each Jordan sneaker's distribution with respect to the average deadstock price. This plot reveals that Jordan 4 and select Jordan 1 sneakers are significantly different than others in association with increased resale prices. 
+
+<img src="images/Box_Collab.png" alt="drawing" width="600"/> 
+
+The boxplot displays the distribution of the collaboration indicator variable with respect to the average deadstock price. This plot further illustrates that sneakers produced in collaboration with other brands are generally associated with increased resale prices. 
+
 
 ## 2. Principal Component Analysis Results 
 
