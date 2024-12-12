@@ -22,7 +22,7 @@ A screeplot and cumulative proportion of variance plot were created to determine
 
 Barplots containing the loadings for the first two principal components were created in order to determine which variables contribute most to each component. 
 
-  <img src="imaeges/BarPlots_PCA.png" alt ="drawing" width ="600"/> 
+  <img src="images/BarPlots_PCA.png" alt="drawing" width="600"/>
 
 The first barplot displays the loadings for the first principal component, which shows Average DeadStock Price, Last Sale Price, and Lowest Ask Price are loaded high for PC1. The second barplot displays the loadings for the second principal component, which shows that Collaboration and Retail Price are loaded high for PC2. 
         
