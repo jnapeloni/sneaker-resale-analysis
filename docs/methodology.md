@@ -42,17 +42,8 @@ Multiple statistical models were applied to identify the most important factors 
     - Principal Component Regression was performed using the first two principal components, in which `AvgDSPrice` was chosen as the dependent variable. 
   - **Results**:
       - A screeplot and cumulative proportion of variance plot were created to determine an appropriate number of principal components. Based on these plots, The first two principal components explain approximately 80% of the variance in the data. Thus, I chose to utilize 2 principal components in this analysis.
-        <p float="left">
-          <img src="images/Screeplot_PCA.png" width="400" />
-          <img src="images/CumulativePropVar.png" width="400" />
-        </p>
       - Barplots containing the loadings for the first two principal components were created in order to determine which variables contribute most to each component. Based on the barplots and loadings, Average DeadStock Price, Last Sale Price, and Lowest Ask Price are loaded high for the first component. The collaboration and retail price variables are loaded high for the second principal components.
- 
-        <img src="images/BarPlots_PCA.png" alt="drawing" width="600"/>
-        
-      - A biplot plotting the data points with the first two principal components on the axes was created to visualize the loadings and significance of the variables' contributions to each principal component. The plot shows that `AvgDSPrice`, `lastSale`, and `lowestAsk` are loaded high for the first principal component, along with `collab` and `retail` loaded high for the second principal component.
-   
-        <img src="images/Biplot.png" alt="drawing" width="600"/>
+      - A biplot plotting the data points with the first two principal components on the axes was created to visualize the loadings and significance of the variables' contributions to each principal component.
 
 ### b. K-Means Clustering 
 
@@ -62,12 +53,7 @@ Multiple statistical models were applied to identify the most important factors 
      - A plot using the CH-Index to measure between-cluster variation was created to determine the optimal number of clusters
   - **Results**:
      - The between-cluster variation plot utilizes the CH-Index to determine the optimal number of centers (or clusters) to use when implementing k-means clustering. Based on this plot, the CH-Index reaches its largest value when utilizing 4 clusters. Thus, I chose to use 4 centers in k-means cluster analysis.
-       
-         <img src="images/CHindex.png" alt="drawing" width="400"/>
-         
-     - K-means clustering utilizing 4 centers was applied to the dataset and plotted with the first two principal components on the axes. Based on the plot, it appears that the first principal component was most influential in determining cluster assignment for this data. The plot does have some overlapping clusters, but this is minimal in comparison to utilizing a different number of centers or clusters. Thus, utilizing 4 clusters seems reasonable in clustering this data. 
-
-         <img src="images/KMeans_Cluster.png" alt="drawing" width="400"/>
+     - K-means clustering utilizing 4 centers was applied to the dataset and plotted with the first two principal components on the axes. Based on the plot, it appears that the first principal component was most influential in determining cluster assignment for this data. 
 
 ### c. Hierarchical Clustering 
 
@@ -79,8 +65,6 @@ Multiple statistical models were applied to identify the most important factors 
        - The minimax linkage function in the 'protoclust' R package was applied to the distance matrix for hierarchical clustering analysis
    - **Results**:
        - The minimax linkage function was chosen out of a potential five linkage functions (single, complete, centroid, and average) because it produced the most effective clustering of the data. The data was grouped into 4 clusters based on the minimax linkage function and was then plotted with the first two principal components on the axes. The datapoints were replaced with a number representing each observation's cluster assignment (cluster 1, 2, 3, or 4) and each cluster was plotted in a different color to easily identify the different clusters. The plot suggests that the first principal component is important in explaining and clustering the data, as it creates four distinct clusters which are separate from one another.
-
-         <img src="images/Minimax.png" alt="drawing" width="400"/>
 
 
 Further results, analysis, and interpretations can be found in the [Results](results.md) section
