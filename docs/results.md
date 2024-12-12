@@ -44,9 +44,51 @@ In the correlation matrix, a stronger shade of blue represents a stronger, posit
 
 ## 2. Principal Component Regression 
 
-Using the results obtained by applying Principal Component Analysis on the quantitative variables in the data, Principal Component Regression was implemented to determine and quantify the effects of each principal component on a dependent variable, being the `AvgDSPrice` variable. 
+Using the results obtained by applying Principal Component Analysis on the quantitative variables in the data, Principal Component Regression was implemented to determine and quantify the effects of each principal component on a dependent variable, being the `AvgDSPrice` variable. The results obtained from this regression can be seen in the table below. 
 
-   <img 
+   <img src="images/PCR_Reg.png" alt="drawing" width="600"/> 
+
+The intercept term is 200.948 dollars, which is the price we expect if both PC1 and PC2 are zero, and is statistically significant at the 5% level. Principal Component 1 has a coefficient of -59.369 dollars, which is the average change in expected price for a one unit increase in the first principal component. This result is statistically significant at the 5% level. Principal Component 2 has a coefficient of 4.426 dollars, which is the average change in expected price associated with a one unit increase in the second Principal Component, and is also statistically significant at the 5% level. Based on these results, we can reasonably conclude that sneakers with higher retail prices and those that are apart of a collaboration are associated with higher prices on the resale market. 
+
+## 3. Clustering Analysis 
+
+Clustering analysis was implemented in two ways on this data. The first, being k-means clustering, utilizes a step-wise approach to partition the data into groups. The second, being hierarchical clustering, groups the observed data into clustering based on a predetermined linkage function. 
+
+### a. K-Means Clustering 
+
+K-means clustering utilizes a step-wise approach over many iterations to determine an optimal clustering of the data, based on a pre-specified number of centers, or clusters. 
+
+#### I. Optimal Number of Centers (Clusters) 
+
+The Between-Cluster variation plot utilizes the CH-Index to determine the optimal number of centers (or clusters) to partition the data when using K-Means clustering. 
+
+   <img src="images/CHindex.png" alt="drawing" width="600"/>    
+
+The CH-Index obtains a maximum value when utilizing 4 groups, or clusters, thus indicating that this is the optimal number of centers to use in applying K-Means Clustering. 
+
+#### II. K-Means Clustering with 4 Centers 
+
+K-Means clustering implemented utilizing 4 centers, or groups, and was iterated over 100 runs to converge to an optimal grouping of the data based on these centers. 
+
+   <img src="images/KMeans_Cluster.png" alt="drawing" width="600"/> 
+
+The above figure plots each data point grouped in its cluster assignment, which is specified through the color of its point, and is plotted with the first two principal components on the axes. Based on the figure, it appears that the first principal component was most influential in determining the cluster assignment for each observation in the data. However, the second cluster does appear to contain some variation in the observations' values for the first principal component, indicating that these points may differ from other clusters significantly in both their PC1 values and other underlying variables' values. It is also important to note that this cluster assignment does contain some overlap between clusters. This indicates that, while the first two principal components explain a large portion of the variation in the data, they may not capture all of the variation and patterns. However, the four-cluster solution selected, in this case, does perform better in grouping data and minimizing the overlap between clusters as compared to other variations of centers, and therefore is sufficient in modeling and clustering this data. 
+
+### b. Hierarchical Clustering 
+
+In addition to K-Means clustering, hierarchical clustering was applied to the data as an alternative approach to clustering the observations. This alternative method allows for further analysis in grouping similar observations in the data. 
+
+#### I. Determining Appropriate Linkage Function 
+
+To determine an optimal linkage function in applying hierarchical clustering, the data was clustered using five potential linkage functions: Single Linkage, Complete Linkage, Centroid Linkage, Average Linkage, and Minimax Linkage. 
+
+
+
+
+
+
+
+
 
 
 
