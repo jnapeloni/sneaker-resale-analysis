@@ -36,7 +36,17 @@ The biplot further shows that `AvgDSPrice`, `lastSale` and `lowestAsk` are loade
 
 ### d. Correlation Matrix 
 
-Based on the potential associations (and disassociations) between the variables shown in the biplot, a correlation matrix was created to further analyze the possible correlations between the quantitative variables in the data. 
+Based on the potential associations between the variables shown in the biplot, a correlation matrix was created to further analyze the possible correlations between the quantitative variables in the data. 
+
+   <img src="images/Corr_Matrix.png" alt="drawing" width="600"/> 
+
+In the correlation matrix, a stronger shade of blue represents a stronger, positive, correlation between variables, and lighter shades represent weaker (but still positive) correlations. The lightest shades of blue (almost white) represent a correlation of 0 between variables, or no association. Analyzing the potential relationships between variables, as indicated in the biplot, reveals a strong correlation between the `annualHigh` variable and both the `highestBid` and `AvgDSPrice` variables. Furthermore, there is a strong correlation between the `annualLow` variable and both the `lowestAsk` and `AvgDSPrice` variables. `lastSale` is highly correlated with the `lowestAsk` and `AvgDSPrice` variables. All of these correlations, with some stronger than others, are positive associations. Lastly, the correlation matrix reveals that the `collab` and `retail` variables have a correlation coefficient equal to zero, or that there is no correlation between these variables. 
+
+## 2. Principal Component Regression 
+
+
+
+   
 
 
 
