@@ -88,6 +88,12 @@ The hierarchichal clustering plot, utilizing the minimax linkage function, plots
 
 #### II. Boxplots of Clusters 
 
+Based on the fact that the first principal component is significant in clustering the observations in the data, boxplots were created to further analyze and visualize the distribution of PC1's contribuitong variables between each cluster. 
+
+<img src="images/Cluster_Boxes.png" alt="drawing" width="800"/> 
+
+These boxplots display the distribution of the `lowestAsk`, `AvgDSPrice`, and `lastSale` variables between each of the four clusters. For all three variables (boxplots), the median values, as well as the interquartile ranges, are signfiicantly different from one another. This further illustrates that these three variables (that largely contribute to the first principal component) are significant in determining the cluster assignment for this data. 
+
 
 
 
