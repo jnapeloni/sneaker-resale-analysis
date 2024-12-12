@@ -80,8 +80,11 @@ In addition to K-Means clustering, hierarchical clustering was applied to the da
 
 #### I. Determining Appropriate Linkage Function 
 
-To determine an optimal linkage function in applying hierarchical clustering, the data was clustered using five potential linkage functions: Single Linkage, Complete Linkage, Centroid Linkage, Average Linkage, and Minimax Linkage. 
+To determine an optimal linkage function in applying hierarchical clustering, the data was clustered using five potential linkage functions: Single Linkage, Complete Linkage, Centroid Linkage, Average Linkage, and Minimax Linkage. Based on these results, the minimax linkage function proved to be the optimal approach to clustering the data. The data was clustered into four groups, based on the optimal number of clusters found when applying K-Means clustering, as well as in examining the dendogram for the minimax linkage clustering approach. 
 
+<img src="images/Minimax.png" alt="drawing" width="600"/> 
+
+The hierarchichal clustering plot, utilizing the minimax linkage function, plots each data point using a number and color, which denotes its cluster assignment. Similar to the K-Means Cluster plot, the data is plotted against the first two principal components, and produces similar results to that of the K-Means clustering approach. That is, that the first principal component appears most significant in clustering the data. Furthermore, the minimax linkage function produces clusters that are distinct and separate from one another when plotted using the first two principal components, suggesting that this is a useful method in grouping observations in the data. 
 
 
 
