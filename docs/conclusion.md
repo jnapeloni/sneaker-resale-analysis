@@ -49,4 +49,4 @@ This project provides a detailed analysis of sneakers on the resale market. Stat
 
 While these methods were useful in detecting key contributing factors to increased resale prices and detecting similar sneakers, future work can be done to improve this analysis. 
 
-Thank you for checking out this project and analysis! All [code](Final_Project_Code_355.Rmd) and datasets used can be found in the GitHub Repository! 
+Thank you for checking out this project and analysis! All code and datasets used can be found in the [GitHub Repository](https://github.com/jnapeloni/sneaker-resale-analysis/tree/main)! 
