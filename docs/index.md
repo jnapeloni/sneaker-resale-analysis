@@ -37,4 +37,6 @@ Jack Napeloni, Williams College '25, Economics and Statistics
 
 ## References 
 
+Dataset used for analysis can be found [here](https://www.kaggle.com/datasets/ajiaron/stockx-sneaker-data)!
+
 
