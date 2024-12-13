@@ -91,7 +91,7 @@ The Between-Cluster variation plot utilizes the CH-Index to determine the optima
 
 The CH-Index obtains a maximum value when utilizing 4 groups, or clusters, thus indicating that this is the optimal number of centers to use in applying K-Means Clustering. 
 
-#### II.** K-Means Clustering with 4 Centers**:  
+#### II.**K-Means Clustering with 4 Centers**:  
 
 K-Means clustering implemented utilizing 4 centers, or groups, and was iterated over 100 runs to converge to an optimal grouping of the data based on these centers. 
 
