@@ -83,7 +83,7 @@ Clustering analysis was implemented in two ways on this data. The first, being k
 
 K-means clustering utilizes a step-wise approach over many iterations to determine an optimal clustering of the data, based on a pre-specified number of centers, or clusters. 
 
-#### I. Optimal Number of Centers (Clusters) 
+#### I. **Optimal Number of Centers (Clusters)**:  
 
 The Between-Cluster variation plot utilizes the CH-Index to determine the optimal number of centers (or clusters) to partition the data when using K-Means clustering. 
 
@@ -91,7 +91,7 @@ The Between-Cluster variation plot utilizes the CH-Index to determine the optima
 
 The CH-Index obtains a maximum value when utilizing 4 groups, or clusters, thus indicating that this is the optimal number of centers to use in applying K-Means Clustering. 
 
-#### II. K-Means Clustering with 4 Centers 
+#### II.** K-Means Clustering with 4 Centers**:  
 
 K-Means clustering implemented utilizing 4 centers, or groups, and was iterated over 100 runs to converge to an optimal grouping of the data based on these centers. 
 
@@ -103,7 +103,7 @@ The above figure plots each data point grouped in its cluster assignment, which 
 
 In addition to K-Means clustering, hierarchical clustering was applied to the data as an alternative approach to clustering the observations. This alternative method allows for further analysis in grouping similar observations in the data. 
 
-#### I. Minimax Linkage 
+#### I. **Minimax Linkage**: 
 
 To determine an optimal linkage function in applying hierarchical clustering, the data was clustered using five potential linkage functions: Single Linkage, Complete Linkage, Centroid Linkage, Average Linkage, and Minimax Linkage. Based on these results, the minimax linkage function proved to be the optimal approach to clustering the data. The data was clustered into four groups, based on the optimal number of clusters found when applying K-Means clustering, as well as in examining the dendogram for the minimax linkage clustering approach. 
 
@@ -111,7 +111,7 @@ To determine an optimal linkage function in applying hierarchical clustering, th
 
 The hierarchichal clustering plot, utilizing the minimax linkage function, plots each data point using a number and color, which denotes its cluster assignment. Similar to the K-Means Cluster plot, the data is plotted against the first two principal components, and produces similar results to that of the K-Means clustering approach. That is, that the first principal component appears most significant in clustering the data. Furthermore, the minimax linkage function produces clusters that are distinct and separate from one another when plotted using the first two principal components, suggesting that this is a useful method in grouping observations in the data. 
 
-#### II. Boxplots of Clusters 
+#### II. **Boxplots of Clusters**:  
 
 Based on the fact that the first principal component is significant in clustering the observations in the data, boxplots were created to further analyze and visualize the distribution of PC1's contribuitong variables between each cluster. 
 
