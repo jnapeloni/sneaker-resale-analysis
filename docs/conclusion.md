@@ -43,8 +43,10 @@ Based on the results of this analysis, along with the consideration of its limit
   2. **Expanded Dataset**:
      - As mentioned in the limitations section, this dataset contained observations from the first 25 pages of StockX's catalog. More extensive analysis can be performed on a larger dataset of sneakers, which contains observations beyond the most popular and frequently interacted with on the resale market.
     
-## Final Conclusions: 
+## Final Words: 
 
 This project provides a detailed analysis of sneakers on the resale market. Statistical tools, such as Principal Component Analysis and Clustering Analysis, were implemented to detect key contributing variables of increased resale prices, as well as to detect similar sneakers based on underlying factors. This analysis revealed that both sneaker brand and collaborations with other brands are significantly associated with higher resale prices. 
 
 While these methods were useful in detecting key contributing factors to increased resale prices and detecting similar sneakers, future work can be done to improve this analysis. 
+
+Thank you for checking out this project and analysis! All [code]() and datasets used can be found in the GitHub Repository! 
