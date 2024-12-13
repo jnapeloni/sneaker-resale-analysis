@@ -26,9 +26,11 @@ The objectives of this project are to:
 ## Key Findings 
   1. The brand of sneakers is significantly associated with resale price ranges. Yeezy, Nike SB, and Jordan brand sneakers are associated with higher resale prices.
   2. Collaboration is a significant indicator variable associated with higher sneaker resale prices.
-  3. 
+  3. Last Sale Price, Average Deadstock Price, and Lowest Asking Price are significant contributing variables in clustering similar sneakers 
 
 ## Future Work 
+  1. Considering additional variables, such as the quantity of pairs produced or specific brand collaborations, may further explain the variation in sneaker resale prices.
+  2. Utilizing an expanded dataset, beyond the most popular and frequently searched sneakers, may provide further insight into the discrepancies in sneaker resale prices. 
 
 ## Author 
 Jack Napeloni, Williams College '25, Economics and Statistics  
