@@ -1,0 +1,393 @@
+---
+title: "STAT 355 Final Project Code"
+author: "Jack Napeloni"
+date: "2024-12-03"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r}
+# Reading Data 
+sneakers <- read.csv("/Users/jacknapeloni/desktop/Multivariate/FinalProject/sneakers2023.csv", sep = ",", header = T)
+
+# Cleaning Data Steps 
+
+sneakers.clean <- sneakers[,-1] # Removing First Column 
+
+#1 Replacing 'adidas' with 'Yeezy' for Yeezy Shoes 
+yeezy_rows <- grep("yeezy", sneakers$item, ignore.case = TRUE)
+sneakers.clean$brand[yeezy_rows] <- "Yeezy"
+
+#2 Replacing 'Nike' with 'Nike Dunk' for Dunks 
+dunk_rows <- grep("dunk", sneakers$item, ignore.case = TRUE) 
+sneakers.clean$brand[dunk_rows] <- "Nike Dunk"
+
+#3 Replacing 'Nike' with 'Nike SB' for Nike SB Shoes 
+SB_rows <- grep("SB", sneakers$item, ignore.case = FALSE)
+sneakers.clean$brand[SB_rows] <- "Nike SB"
+
+#4 Replacing 'Nike' with 'Nike AF' for AF1 Shoes 
+AF_rows <- grep("Air Force", sneakers$item, ignore.case = TRUE)
+sneakers.clean$brand[AF_rows] <- "Nike AF1"
+
+#5 Separating Jordan into different types 
+sneakers.clean$jordan.type <- NA
+jordan_rows <- sneakers.clean$brand == "Jordan"
+sneakers.clean$jordan.type[jordan_rows] <- sub(".*(Jordan \\d+).*", "\\1",sneakers.clean$item[jordan_rows])
+sneakers.clean$jordan.type[1] <- "Jordan 4"
+
+#6 Adding Collaboration Variable (0 = no, 1 = Yes)
+sneakers.clean$collab <- 0
+  # Rows with collabs (its a lot lol)
+collab.rows <- c(1, 6, 52, 78, 107, 108, 109, 100, 254, 298, 333, 343, 368, 395, 527, 774, 3, 22, 45, 228, 445, 452, 1055, 1132, 1436, 1478, 1595, 1820, 1971, 2000, 28, 43, 467, 588, 753, 1658, 1773, 1939, 71, 100, 141, 323, 1031, 1147, 1461, 1731, 24, 77, 369, 376, 540, 567, 595, 643, 669, 1019, 1101, 1160, 1170, 1240, 1315, 1336, 1444, 1651, 1788, 84, 256, 342, 406, 409, 459, 506, 585, 606, 626, 693, 777, 813, 1017, 1038, 1098, 1110, 1339, 1414, 1445, 1487, 1499, 1747, 1799, 1942, 23, 90, 827, 1518, 1670, 1767, 94, 1590, 99, 131, 457, 470, 476, 854, 903, 987, 1194, 1208, 1256, 1405, 1783, 111, 161, 354, 1004, 130, 660, 1223, 1239, 1544, 1881, 132, 321, 499, 502, 1236, 1576, 1677, 1987, 1988, 145, 153, 1909, 155, 337, 580, 799, 814, 1383, 1543, 157, 219, 591, 1545, 227, 388, 579, 705, 968, 1174, 1365, 1671, 1876, 241, 272, 508, 557, 613, 915, 469, 1161, 1172, 1512, 1582, 1938, 1948, 1983, 1986, 342, 887, 1314, 1445, 1532, 1552, 1870, 367, 439, 1331, 1389, 374, 807, 423, 578, 742, 776, 880, 887, 892, 1182, 1207, 1228, 1314, 1425, 1476, 1486, 1493, 1552, 1597, 1624, 1813, 1921, 1927, 468, 726, 470, 1208, 1405, 489, 742, 892, 1102, 1425, 1597, 360, 362, 444, 549, 571, 746, 899, 1155, 1289, 1347, 1439, 1458, 1680, 1687, 1891, 573, 864, 1049, 1142, 1482, 1498, 1853, 607, 672, 675, 960, 961, 1381, 1422, 1540, 800, 972, 1524, 1578, 1579, 1736, 1858, 1978, 82, 243, 473, 786, 1070, 1075, 1104, 1960, 1961, 816, 1303, 761, 1308, 1916, 795, 986, 1413, 1994, 1629, 1927, 88, 1704, 1896, 1929, 784, 806, 849, 866, 890, 995, 1124, 1205, 1221, 1246, 1275, 1348, 1371, 1501, 1550, 1600, 1865)
+sneakers.clean$collab[collab.rows] <- 1
+
+#7 Edit one case with a typo in the 'retail' variable 
+sneakers.clean$retail[1334] <- 110
+
+#8 Adjust variable name for asics to be constant 
+sneakers.clean$brand[1434] <- "ASICS"
+sneakers.clean$brand[1966] <- "ASICS"
+
+#8 Removing observations with missing data 
+sneakers.clean <- sneakers.clean[sneakers.clean$retail != 0, ]
+
+# Adjust column name for ease 
+colnames(sneakers.clean)[15] <- "AvgDSPrice"
+```
+
+
+```{r, fig.width = 10, fig.height= 4}
+# EDA on Data 
+library(ggplot2)
+library(gridExtra)
+
+# Histograms for Quant Variables 
+hist1 <- ggplot(sneakers.clean, aes(x = retail))+geom_histogram(bins = 20, col = 'black', fill = "lightgray")+labs(x = "Retail Price ($)", y = "Frequency", title = "Hist. Retail Price")+theme(plot.title = element_text(hjust = 0.5))
+hist2 <- ggplot(sneakers.clean, aes(x = lowestAsk))+geom_histogram(bins = 20, col = 'black', fill = "lightgray")+labs(x = "Lowest Price ($)", y = "Frequency", title = "Hist. Lowest Resale Price")+theme(plot.title = element_text(hjust = 0.5))
+hist3 <- ggplot(sneakers.clean, aes(x = salesThisPeriod))+geom_histogram(bins = 20, col = 'black', fill = "lightgray")+labs(x = "Number of Sales", y = "Frequency", title = "Hist. Num. Sales")+theme(plot.title = element_text(hjust = 0.5))
+hist4 <- ggplot(sneakers.clean, aes(x = deadstockSold))+geom_histogram(bins = 20, col = 'black', fill = "lightgray")+labs(x = "Total Num. Sold", y = "Frequency", title = "Hist. Total Num. Sold")+theme(plot.title = element_text(hjust = 0.5))
+hist5 <- ggplot(sneakers.clean, aes(x = AvgDSPrice))+geom_histogram(bins = 20, col = 'black', fill = "lightgray")+labs(x = "Average Price", y = "Frequency", title = "Hist. Average DS Price")+theme(plot.title = element_text(hjust = 0.5))
+hist6 <- ggplot(sneakers.clean, aes(x = lastSale))+geom_histogram(bins = 20, col = 'black', fill = "lightgray")+labs(x = "Most Recent Sale Price", y = "Frequency", title = "Hist. Most Recent Sale Price")+theme(plot.title = element_text(hjust = 0.5))
+
+grid.arrange(hist1, hist2, hist3, hist4, hist5, hist6, ncol = 3)
+```
+
+```{r, fig.width = 14, fig.height = 2}
+# More EDA for Dataset 
+
+sneakers.clean$collab <- as.factor(sneakers.clean$collab)
+sneakers.nikes <- sneakers.clean[sneakers.clean$brand %in% c("Nike SB", "Jordan", "Nike AF1", "Nike Dunk"), ]
+sneakers.brands <- sneakers.clean[sneakers.clean$brand %in% c("Nike SB", "Jordan", "Nike AF1", "Nike Dunk", "adidas", "Nike", "Yeezy", "New Balance"), ]
+
+
+bar1 <- ggplot(sneakers.nikes, aes(x = brand))+
+  geom_bar(col = 'black', fill = 'lightblue')+
+  labs(x = "Nike Type", y = "Frequency", title = "Barplot of Nike Shoes")+
+  theme(plot.title = element_text(hjust = 0.5))
+bar2 <- ggplot(sneakers.clean, aes(x = collab))+
+  geom_bar(col = 'black', fill = 'lightblue')+
+  labs(x = "Collaboration?", y = "Frequency", title = "Barplot of Collaborations")+
+  theme(plot.title = element_text(hjust = 0.5))+scale_x_discrete(labels = c("0" = "No", "1" = "Yes"))
+bar3 <- ggplot(sneakers.brands, aes(x = brand))+
+  geom_bar(col = "black", fill = "lightblue")+
+  labs(x = "Brand", y = "Frequency", title = "Barplot of Brands")+ 
+  theme(plot.title = element_text(hjust = 0.5), axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+
+grid.arrange(bar1, bar2, bar3, ncol = 3)
+
+# Boxplot of Brand Variable and Resale Prices 
+
+box.brand <- ggplot(sneakers.brands, aes(x = brand, y = AvgDSPrice))+
+  geom_boxplot()+
+  labs(x = "Brand", y = "Average Deadstock Price", title = "Distribution of Avg. DS Price for Brands")+
+  theme(plot.title = element_text(hjust = 0.5), axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+
+# Boxplot of Jordan Prices 
+jordan.sneakers <- sneakers.clean[sneakers.clean$brand == "Jordan", ]
+jordan.clean <- jordan.sneakers[-c(510, 591, 621, 638, 647), ]
+box.jordans <- ggplot(jordan.clean, aes(x = as.factor(jordan.type), y = AvgDSPrice))+
+  geom_boxplot()+
+  labs(x = "Jordan Type", y = "Average Deadstock Price", title = "Distribution of Avg. DS Price for Jordan Types")+
+  theme(plot.title = element_text(hjust = 0.5), axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+
+# Boxplot for collab variable 
+box.collab <- ggplot(sneakers.clean, aes(x = as.factor(collab), y = AvgDSPrice))+
+  geom_boxplot()+
+  labs(x = "Collaboration", y = "Average Deadstock Price", title = "Distribution of Avg. DS Price for Collabs")+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = c("0" = "No", "1" = "Yes"))
+```
+
+
+
+```{r}
+# Principal Component Analysis 
+
+# Subsetting Data into Quantitative Variables 
+sneakers.quant <- sneakers.clean[, c("retail", "lowestAsk", "numberOfAsks", "salesThisPeriod", "highestBid", "numberOfBids", "annualHigh", "annualLow", "volatility", "deadstockSold", "pricePremium", "AvgDSPrice", "lastSale", "collab")] # Subsetting data into only quantitative variables 
+sneakers.quant <- sneakers.quant[, -c(3, 4, 6, 9, 10, 11)]
+sneakers.quant$collab <- as.numeric(sneakers.quant$collab)
+
+# Principal Component Analysis 
+pca.sneakers <- prcomp(sneakers.quant, scale = TRUE)
+summary(pca.sneakers)
+
+# Plotting Screeplot and Cumulative Variance Explained 
+par(mfrow = c(1,2))
+
+screeplot(pca.sneakers, type = "lines", main = "Variance Explained by Each PC")
+plot(cumsum(pca.sneakers$sdev^2)/sum(pca.sneakers$sdev^2), type="b",
+  main='Cumulative Proportion of Variance', ylab = "Proportion of Variance")
+
+# Barplots of Loadings for Each PC 
+
+new.loadings <- pca.sneakers$rotation[,1:3]
+par(mfrow = c(1,2))
+
+barplot(new.loadings[,1], main = "Loadings for PC1", ylim = c(-1,1), las = 2, cex.names = 0.8)
+
+barplot(new.loadings[,2], main = "Loadings for PC2", ylim = c(-1,1), las = 2, cex.names = 0.8)
+
+# barplot(new.loadings[,3], main = "Loadings for PC3", ylim = c(-1,1), las = 2)
+
+new.loadings
+
+# Biplot 
+library(ggfortify)
+autoplot(pca.sneakers, data = sneakers.quant, label=F, loadings = TRUE,
+ loadings.colour = "blue", loadings.label = TRUE, main = "Biplot for Sneaker Data")
+```
+
+
+
+Based on both the screeplot and cumulative proportion of variance plot, using 2 principal components is sufficient. Average Deadstock Price, Lowest Ask Price, and Last Sale Price are loaded high for PC1. Collaboration and Retail Price are loaded high for PC2. The biplot reflects these same variable loadings for both principal components. 
+
+```{r}
+# Biplots utilizing principal components to detect a variable in the dataset 
+
+# Copy of dataset as to not break other code 
+
+sneakers.auto <- sneakers.quant
+
+# Breaking up quantitative variables into cut groups 
+
+# Biplots using cut quantitative variables 
+autoplot(pca.sneakers, data = sneakers.auto, label = F, loadings = FALSE, color = c(1,2,4,5)[sneakers.auto$AvgDSPrice], main = "PCA Colored by Avg. DS Price", x = 1, y = 2)
+
+autoplot(pca.sneakers, data = sneakers.auto, label = F, loadings = FALSE, color = c(1,2)[sneakers.auto$collab], main = "PCA Colored by Collaboration", x = 1, y = 2) 
+  ### Black is 0 (no collab) and red is 1 (yes collab)
+
+
+```
+
+```{r}
+# Principal Component Regression 
+
+# Stargazer for HTML Output 
+library(stargazer)
+pc.scores <- as.data.frame(pca.sneakers$x[, 1:2])
+pcr.regression <- lm(sneakers.quant$AvgDSPrice ~ ., data = pc.scores)
+summary(pcr.regression)
+stargazer(pcr.regression, type = "text", title = "PCR Results", align = TRUE)
+
+# Kable for PDF Output 
+library(broom)
+library(kableExtra)
+
+summary_table <- broom::tidy(pcr.regression)
+
+summary_table %>%
+  kable("latex", booktabs = TRUE, caption = "PCR Results") %>%
+  kable_styling(latex_options = c("hold_position", "striped"))
+```
+
+```{r}
+# Variable Correlation 
+corr <- cor(sneakers.quant, method = "pearson")
+corrplot::corrplot(corr, method= "color", order = "hclust", tl.pos = 'lt', tl.col = "black")
+```
+
+
+```{r}
+# Clustering Analysis - Hierarchical 
+library(protoclust)
+# Scale Data, Create Distance Matrix, and Apply Five Linkage Functions 
+scaled.sneakers.quant <- scale(sneakers.quant)
+dist.sneakers <- dist(scaled.sneakers.quant)
+
+hc.single <- hclust(dist.sneakers, method = "single")
+hc.complete <- hclust(dist.sneakers, method = "complete")
+hc.average <- hclust(dist.sneakers, method = "average")
+hc.centroid <- hclust(dist.sneakers^2, method = "centroid")
+hc.minimax <- protoclust(dist.sneakers)
+
+# Plot Clusters with Principal Components to Determine Effective Clustering (Hierarchical)
+par(mfrow = c(2,3))
+
+plot(pca.sneakers$x, type = "n", xlab = "PC1", ylab = "PC2", main="Single Linkage") 
+text(pca.sneakers$x[,1:2], labels = (cutree(hc.single, k = 4)), cex=1.5, col=(cutree(hc.single, k = 4)))
+
+plot(pca.sneakers$x, type = "n", xlab = "PC1", ylab = "PC2", main="Complete Linkage") 
+text(pca.sneakers$x[,1:2], labels = (cutree(hc.complete, k = 4)), cex=1.5, col=(cutree(hc.complete, k = 4)))
+
+plot(pca.sneakers$x, type = "n", xlab = "PC1", ylab = "PC2", main="Centroid Linkage") 
+text(pca.sneakers$x[,1:2], labels = (cutree(hc.centroid, k = 4)), cex=1.5, col=(cutree(hc.centroid, k = 4)))
+
+plot(pca.sneakers$x, type = "n", xlab = "PC1", ylab = "PC2", main="Average Linkage") 
+text(pca.sneakers$x[,1:2], labels = (cutree(hc.average, k = 4)), cex=1.5, col=(cutree(hc.average, k = 4)))
+
+plot(pca.sneakers$x, type = "n", xlab = "PC1", ylab = "PC2", main="Minimax Linkage") 
+text(pca.sneakers$x[,1:2], labels = (cutree(hc.minimax, k = 4)), cex=1.5, col=(cutree(hc.minimax, k = 4)))
+
+```
+
+Hierarchical clustering seems effective for single linkage, average linkage, and minimax linkage. For this project, I think using minimax linkage will be most useful. 
+
+```{r, fig.height = 4, fig.width = 14}
+# T Test for the mean of variables in clusters 
+
+sneakers.quant.clust <- sneakers.quant
+clusters <- cutree(hc.minimax, k = 4)
+sneakers.quant.clust$cluster <- clusters
+t.test(sneakers.quant.clust$lowestAsk ~ sneakers.quant.clust$cluster == 1) 
+t.test(sneakers.quant.clust$AvgDSPrice ~ sneakers.quant.clust$cluster == 1)
+
+# Cluster 1 versus all others 
+
+p.box <- ggplot(sneakers.quant.clust, aes(x = as.factor(cluster == 1), y = lowestAsk))+
+  geom_boxplot()+
+  labs(x = "Cluster Membership", y = "Lowest Ask Price", title = "Distribution of Lowest Ask Between Clusters")+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = c("FALSE" = "Not in Cluster 1", "TRUE" = "Cluster 1"))
+
+p.box.2 <- ggplot(sneakers.quant.clust, aes(x = as.factor(cluster == 1), y = AvgDSPrice))+
+  geom_boxplot()+
+  labs(x = "Cluster Membership", y = "Average Deadstock Price", title = "Distribution of Avg. DS Price Between Clusters")+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = c("FALSE" = "Not in Cluster 1", "TRUE" = "Cluster 1"))
+
+p.box.3 <- ggplot(sneakers.quant.clust, aes(x = as.factor(cluster == 1), y = lastSale))+
+  geom_boxplot()+
+  labs(x = "Cluster Membership", y = "Last Sale Price", title = "Distribution of Last Sale Price Between Clusters")+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = c("FALSE" = "Not in Cluster 1", "TRUE" = "Cluster 1"))
+  
+# All Clusters 
+
+box.1 <- ggplot(sneakers.quant.clust, aes(x = as.factor(cluster), y = lowestAsk))+
+  geom_boxplot()+
+  labs(x = "Cluster Membership", y = "Lowest Ask Price", title = "Distribution of Lowest Ask Price Between Clusters")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+box.2 <- ggplot(sneakers.quant.clust, aes(x = as.factor(cluster), y = AvgDSPrice))+
+  geom_boxplot()+
+  labs(x = "Cluster Membership", y = "Average Deadstock Price", title = "Distribution of Avg. DS Price Between Clusters")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+box.3 <- ggplot(sneakers.quant.clust, aes(x = as.factor(cluster), y = lastSale))+
+  geom_boxplot()+
+  labs(x = "Cluster Membership", y = "Last Sale Price", title = "Distribution of Last Sale Price Between Clusters")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+grid.arrange(box.1, box.2, box.3, ncol = 3)
+
+```
+
+
+```{r}
+# Clustering Analysis - K Means 
+library(cluster)
+library(factoextra)
+
+kmean.1 <- kmeans(sneakers.quant, centers = 1, iter.max = 100)
+fviz_cluster(kmean.1, data = sneakers.quant)
+
+kmean.2 <- kmeans(sneakers.quant, centers = 2, iter.max = 100)
+fviz_cluster(kmean.2, data = sneakers.quant)
+
+kmean.3 <- kmeans(sneakers.quant, centers = 3, iter.max = 100)
+fviz_cluster(kmean.3, data = sneakers.quant)
+
+kmean.4 <- kmeans(sneakers.quant, centers = 4, iter.max = 100)
+fviz_cluster(kmean.4, data = sneakers.quant, main = "4 Cluster Plot")
+
+kmean.5 <- kmeans(sneakers.quant, centers = 5, iter.max = 100)
+fviz_cluster(kmean.5, data = sneakers.quant)
+
+kmean.6 <- kmeans(sneakers.quant, centers = 6, iter.max = 100)
+fviz_cluster(kmean.6, data = sneakers.quant)
+
+kmean.7 <- kmeans(sneakers.quant, centers = 7, iter.max = 100)
+fviz_cluster(kmean.7, data = sneakers.quant)
+
+kmean.8 <- kmeans(sneakers.quant, centers = 8, iter.max = 100)
+fviz_cluster(kmean.8, data = sneakers.quant)
+
+# Within Cluster Variation to Determine Optimal Number of Clusters 
+
+n <- nrow(sneakers.quant); wcv <- rep(0, 10); wcv[1] <- (n-1) * sum(sapply(sneakers.quant, var))
+for (i in 2:10) { 
+  wcv[i] <- sum(kmeans(sneakers.quant, centers = i)$withinss)
+}
+plot(1:10, wcv, type = "b", xlab = "Number of Groups", ylab = "Within Groups Sum of Squares")
+
+# Between Cluster Variation to Determine Optimal Number of Clusters 
+library(fpc)
+ch = rep(0,10)
+for (i in 1:10) { 
+  km = kmeans(sneakers.quant, centers = i)
+  ch[i] <- calinhara(sneakers.quant, km$cluster)
+  }
+plot(1:10, ch, type = "b", xlab = "Number of Groups", ylab = "CH-Index")
+```
+
+Based on looking at the k-means cluster plots for 1 to 10 centers, using 3 clusters seems appropriate. Within group sum of squares seems unhelpful in determining an optimal number of clusters. Between cluster variation seems to suggest that 3 or 4 clusters are optimal in this case. 
+
+
+
+```{r, fig.width = 8, fig.height = 6}
+# Applying Clustering with Gower Distance to include categorical variables 
+sneakers.2 <- sneakers.clean[, -c(1, 4, 6, 7, 9, 12, 13, 14, 17)]
+sneakers.2$jordan.type <- ifelse(is.na(sneakers.2$jordan.type), "None", sneakers.2$jordan.type)
+sneakers.2$brand <- as.factor(sneakers.2$brand)
+sneakers.2$jordan.type <- as.factor(sneakers.2$jordan.type)
+
+# Gower Distance 
+gower <- daisy(sneakers.2, metric = "gower")
+
+# Hierarchical Clustering Using Gower Distance Matrix 
+
+hc.single.gower <- hclust(gower, method = "single")
+hc.complete.gower <- hclust(gower, method = "complete")
+hc.average.gower <- hclust(gower, method = "average")
+hc.centroid.gower <- hclust(gower, method = "centroid")
+
+
+# Multidimensional Scaling for Plot 
+cmd.sneakers = cmdscale(gower, k = 2, eig = TRUE)
+
+# Plotting Clusters in Two Dimensions after MDS 
+par(mfrow = c(2,2))
+
+plot(cmd.sneakers$points, type = "n", xlab = "dim 1", ylab = "dim 2", main = "Single Linkage with Gower")
+text(cmd.sneakers$points[,1:2], labels = (cutree(hc.single.gower, k = 4)), cex = 1.5, col = (cutree(hc.single.gower, k = 4)))
+
+plot(cmd.sneakers$points, type = "n", xlab = "dim 1", ylab = "dim 2", main = "Complete Linkage with Gower")
+text(cmd.sneakers$points[,1:2], labels = (cutree(hc.complete.gower, k = 4)), cex = 1.5, col = (cutree(hc.complete.gower, k = 4)))
+
+plot(cmd.sneakers$points, type = "n", xlab = "dim 1", ylab = "dim 2", main = "Average Linkage with Gower")
+text(cmd.sneakers$points[,1:2], labels = (cutree(hc.average.gower, k = 4)), cex = 1.5, col = (cutree(hc.average.gower, k = 4)))
+
+plot(cmd.sneakers$points, type = "n", xlab = "dim 1", ylab = "dim 2", main = "Centroid Linkage with Gower")
+text(cmd.sneakers$points[,1:2], labels = (cutree(hc.centroid.gower, k = 4)), cex = 1.5, col = (cutree(hc.centroid.gower, k = 4)))
+
+
+```
+
+
+
+
+
