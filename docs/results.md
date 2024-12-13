@@ -51,7 +51,15 @@ A biplot plotting the data points with the first two principal components on the
 
 The biplot further shows that `AvgDSPrice`, `lastSale` and `lowestAsk` are loaded high for the first principal component. It is also important to recognize the cluster of variables loaded similarly for the first principal component, which includes variables such as `annualHigh` and `highestBid`. Thus, this indicates that these variables, while not as important in contribution to the first principal component, may be highly correlated with each other. The biplot further shows that the `collab` and `retail` variables are loaded high for the second principal component. It is important to notice the difference in direction that these variables are loaded, where `collab` is loaded highly negatively and `retail` is loaded positively. This suggests that these two variables, while both contributing greatly to the second principal component, are likely not correlated with each other. 
 
-### d. Correlation Matrix 
+### d. Biplot to Detect Collaboration 
+
+Based on the biplot's visualization of each variables' loadings for the first two principal components, a biplot was created to visualize the difference in collaboration within the data. 
+
+<img 
+
+The biplot is colored by collaboration variable, with black data points indicating the sneaker is not apart of a collaboration and red indicating a collaboration. The figure displays a clear distinction between these two groups with respect to the second principal component, which further illustrates the collaboration variable's importance in explaining the variation in this data.  
+
+### e. Correlation Matrix 
 
 Based on the potential associations between the variables shown in the biplot, a correlation matrix was created to further analyze the possible correlations between the quantitative variables in the data. 
 
