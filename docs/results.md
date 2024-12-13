@@ -29,10 +29,10 @@ Principal Component Analysis was used to reduce the dimensionality of the data t
 ### a. Screeplot and Cumulative Proportion of Variance plot  
 
 A screeplot and cumulative proportion of variance plot were created to determine an appropriate number of principal components. Based on these plots, The first two principal components explain approximately 80% of the variance in the data. Thus, I chose to utilize 2 principal components in this analysis.
-        <p float="left">
-          <img src="images/Screeplot_PCA.png" width="400" />
-          <img src="images/CumulativePropVar.png" width="400" />
-        </p>
+<p float="left">
+        <img src="images/Screeplot_PCA.png" width="400" />
+        <img src="images/CumulativePropVar.png" width="400" />
+</p>
 
 ### b. Loadings for 2 Principal Components  
 
