@@ -55,7 +55,7 @@ The biplot further shows that `AvgDSPrice`, `lastSale` and `lowestAsk` are loade
 
 Based on the biplot's visualization of each variables' loadings for the first two principal components, a biplot was created to visualize the difference in collaboration within the data. 
 
-<img 
+<img src="images/Collab_PCA.png" alt="drawing" width="600"/> 
 
 The biplot is colored by collaboration variable, with black data points indicating the sneaker is not apart of a collaboration and red indicating a collaboration. The figure displays a clear distinction between these two groups with respect to the second principal component, which further illustrates the collaboration variable's importance in explaining the variation in this data.  
 
