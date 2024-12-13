@@ -13,7 +13,7 @@ as well as to uncover specific factors or characteristics of sneakers that are g
 The objectives of this project are to:  
 1. Understand how sneaker characteristics affect resale price range
 2. Analyze specific factors that explain the variation in sneaker resale prices
-3. Build a predictive model to predict resale prices **Note: this might be removed**
+3. Build a predictive model for resale prices 
 4. Analyze sneaker resale trends to cluster similar shoes together
 
 ## Table of Contents
