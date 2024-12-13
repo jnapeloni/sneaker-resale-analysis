@@ -122,7 +122,7 @@ These boxplots display the distribution of the `lowestAsk`, `AvgDSPrice`, and `l
 
 ## Next Steps 
 
-Feel free to check out the [Conclusions](conclusions.md) section for key findings, limitations, and directions for future research! 
+Feel free to check out the [Conclusions](conclusion.md) section for key findings, limitations, and directions for future research! 
 
 
 
