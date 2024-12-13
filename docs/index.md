@@ -24,6 +24,9 @@ The objectives of this project are to:
 [Code](https://github.com/jnapeloni/sneaker-resale-analysis/tree/main/code)  
 
 ## Key Findings 
+  1. The brand of sneakers is significantly associated with resale price ranges. Yeezy, Nike SB, and Jordan brand sneakers are associated with higher resale prices.
+  2. Collaboration is a significant indicator variable associated with higher sneaker resale prices.
+  3. 
 
 ## Future Work 
 
