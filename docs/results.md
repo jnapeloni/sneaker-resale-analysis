@@ -120,7 +120,9 @@ Based on the fact that the first principal component is significant in clusterin
 These boxplots display the distribution of the `lowestAsk`, `AvgDSPrice`, and `lastSale` variables between each of the four clusters. For all three variables (boxplots), the median values, as well as the interquartile ranges, are signfiicantly different from one another. In all three plots, cluster 1 is associated with the lowest value of the y-variable, followed by cluster 2, cluster 3, and cluster 4 is associated with the largest values of the y-variable. This further illustrates that these three variables (that largely contribute to the first principal component) are significant in determining the cluster assignment for this data. 
 
 
+## Next Steps 
 
+Feel free to check out the [Conclusions](conclusions.md) section for key findings, limitations, and directions for future research! 
 
 
 
